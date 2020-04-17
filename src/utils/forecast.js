@@ -17,7 +17,7 @@ const forecast = (lat, long,callback) =>{
         }else{
             const data = body.current;
             callback(undefined,
-                `Today's weather at ${body.location.name} is ${data.weather_descriptions[0]}. Temperature is ${data.temperature} celsius, although it feels like ${data.feelslike}! Humidity is ${data.humidity}%! and Wind Speed is ${data.wind_speed}${data.wind_dir} km/h.`
+                `Today's weather at ${body.location.name} is ${data.weather_descriptions[0]}. Temperature is ${data.temperature} celsius and it feels like ${data.feelslike}! Humidity is ${data.humidity}%! and Wind Speed is ${data.wind_speed}${data.wind_dir} km/h.`
             );
         }
     })
