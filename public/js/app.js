@@ -1,16 +1,6 @@
 //client-side javascript
 console.log('client side js started');
-/* fetch(`http://localhost:2000/weather?address=${queryAddress}`).then((response)=>{
-    response.json().then((data)=>{
-        if (data.error){
-            console.log(data.error);
-        }else{
-            console.log(data.location);
-            console.log(data.forecast);
-            console.log(data.address);
-        }
-    })
-}); */
+
 
 const weatherForm = document.querySelector('form');
 const queryAddress = document.querySelector('input');
@@ -22,7 +12,7 @@ weatherForm.addEventListener('submit',(e)=>{
     const location = queryAddress.value;
     message1.textContent = "Loading....";
     message2.textContent = "";
-    fetch(`http://localhost:2000/weather?address=${location}`).then((response)=>{
+    fetch(`/weather?address=${location}`).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
                 message1.textContent = data.msg;
